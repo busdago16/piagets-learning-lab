@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An interactive exploration of Piaget's cognitive development theory and its application to online learning." />
+  <title>Piaget's Learning Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#home" aria-label="Piaget's Learning Lab home">
+      <span class="brand-mark">PL</span>
+      <span>Piaget's Learning Lab</span>
+    </a>
+
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Open navigation</span>
+    </button>
+
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+      <a href="#home">Welcome</a>
+      <a href="#concepts">Key Concepts</a>
+      <a href="#stages">Stages</a>
+      <a href="#online">Online Learning</a>
+      <a href="#limitations">Strengths & Limits</a>
+      <a href="#discussion">Discussion</a>
+      <a href="#references">References</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">ETEC 512 · Virtual Conference on Learning</p>
+        <h1>How do learners <span>build</span> knowledge?</h1>
+        <p class="hero-text">
+          Step inside Piaget's Learning Lab to explore how schemas change, why cognitive conflict matters,
+          and what developmental theory can—and cannot—tell us about online learning.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#concepts">Enter the lab</a>
+          <button class="button secondary" id="randomChallenge">Give me a challenge</button>
+        </div>
+        <p class="microcopy">Designed as an active experience—not a page to passively scroll through.</p>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="lab-card card-one">
+          <span>01</span>
+          <strong>Observe</strong>
+          <small>Notice what the learner already understands.</small>
+        </div>
+        <div class="lab-card card-two">
+          <span>02</span>
+          <strong>Challenge</strong>
+          <small>Create productive disequilibrium.</small>
+        </div>
+        <div class="lab-card card-three">
+          <span>03</span>
+          <strong>Rebuild</strong>
+          <small>Assimilate or accommodate new knowledge.</small>
+        </div>
+        <div class="brain-core">SCHEMA</div>
+      </div>
+    </section>
+
+    <section class="purpose-strip">
+      <div>
+        <span class="strip-number">01</span>
+        <p><strong>Purpose:</strong> Connect Piaget's theory to the design of meaningful online learning experiences.</p>
+      </div>
+      <div>
+        <span class="strip-number">02</span>
+        <p><strong>Your role:</strong> Explore, predict, test, reconsider, and discuss.</p>
+      </div>
+      <div>
+        <span class="strip-number">03</span>
+        <p><strong>Central idea:</strong> Learners actively construct knowledge through interaction and reflection.</p>
+      </div>
+    </section>
+
+    <section class="section intro-section" id="history">
+      <div class="section-heading reveal">
+        <p class="eyebrow">The theorist</p>
+        <h2>Why Piaget still matters</h2>
+      </div>
+      <div class="two-column">
+        <article class="feature-panel reveal">
+          <div class="portrait-placeholder">
+            <span>1896–1980</span>
+            <div class="portrait-initials">JP</div>
+          </div>
+          <div>
+            <h3>Jean Piaget</h3>
+            <p>
+              Piaget studied how children make sense of the world. His constructivist perspective focuses on
+              the individual learner and the active processes through which knowledge is built and reorganized.
+            </p>
+          </div>
+        </article>
+
+        <article class="quote-panel reveal">
+          <p class="large-quote">
+            Learning is not simply receiving information. Learners interpret new experiences through what
+            they already know—and sometimes must reorganize that knowledge.
+          </p>
+          <p class="citation-note">Adapted from the constructivist principles discussed by Kalina and Powell (2009).</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section concepts-section" id="concepts">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Build the model</p>
+        <h2>Key concepts</h2>
+        <p>Select each concept to see how the learning system works.</p>
+      </div>
+
+      <div class="concept-layout">
+        <div class="concept-tabs reveal" role="tablist" aria-label="Piaget key concepts">
+          <button class="concept-tab active" data-concept="schema" role="tab" aria-selected="true">Schemas</button>
+          <button class="concept-tab" data-concept="assimilation" role="tab" aria-selected="false">Assimilation</button>
+          <button class="concept-tab" data-concept="accommodation" role="tab" aria-selected="false">Accommodation</button>
+          <button class="concept-tab" data-concept="equilibration" role="tab" aria-selected="false">Equilibration</button>
+          <button class="concept-tab" data-concept="knowledge" role="tab" aria-selected="false">Types of Knowledge</button>
+        </div>
+
+        <article class="concept-display reveal" id="conceptDisplay" aria-live="polite">
+          <div class="concept-icon">🧠</div>
+          <p class="concept-label">MENTAL FRAMEWORK</p>
+          <h3>Schemas</h3>
+          <p>Organized patterns of thought or action that learners use to understand and respond to experiences.</p>
+          <div class="concept-example"><strong>Example:</strong> A child may have a schema that “four-legged furry animals are dogs.”</div>
+        </article>
+      </div>
+
+      <div class="knowledge-grid reveal">
+        <article>
+          <span>PHYSICAL</span>
+          <h3>Knowledge of objects</h3>
+          <p>Built through direct interaction with the properties of objects and the physical world.</p>
+        </article>
+        <article>
+          <span>LOGICO-MATHEMATICAL</span>
+          <h3>Knowledge of relationships</h3>
+          <p>Constructed by mentally organizing patterns, quantities, classifications, and relationships.</p>
+        </article>
+        <article>
+          <span>SOCIAL</span>
+          <h3>Knowledge from people</h3>
+          <p>Conventions, language, values, and shared meanings learned through social interaction.</p>
+        </article>
+      </div>
+
+      <div class="activity-card reveal">
+        <div class="activity-heading">
+          <div>
+            <p class="eyebrow">Mini experiment 01</p>
+            <h3>Assimilation or accommodation?</h3>
+          </div>
+          <div class="score-pill">Score: <span id="schemaScore">0</span>/4</div>
+        </div>
+        <p id="schemaScenario" class="scenario-text"></p>
+        <div class="choice-row">
+          <button class="choice-button" data-schema-answer="assimilation">Assimilation</button>
+          <button class="choice-button" data-schema-answer="accommodation">Accommodation</button>
+        </div>
+        <div class="feedback" id="schemaFeedback" aria-live="polite"></div>
+        <button class="text-button hidden" id="nextSchema">Next scenario →</button>
+      </div>
+    </section>
+
+    <section class="section stages-section" id="stages">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Development across time</p>
+        <h2>Stages of cognitive development</h2>
+        <p>Move across the timeline. Each stage changes the kinds of learning experiences that are most meaningful.</p>
+      </div>
+
+      <div class="stage-timeline reveal">
+        <button class="stage-node active" data-stage="sensorimotor">
+          <span>Birth–2</span>
+          <strong>Sensorimotor</strong>
+        </button>
+        <div class="timeline-line"></div>
+        <button class="stage-node" data-stage="preoperational">
+          <span>2–7</span>
+          <strong>Preoperational</strong>
+        </button>
+        <div class="timeline-line"></div>
+        <button class="stage-node" data-stage="concrete">
+          <span>7–11</span>
+          <strong>Concrete Operational</strong>
+        </button>
+        <div class="timeline-line"></div>
+        <button class="stage-node" data-stage="formal">
+          <span>11+</span>
+          <strong>Formal Operational</strong>
+        </button>
+      </div>
+
+      <article class="stage-display reveal" id="stageDisplay">
+        <div class="stage-number">01</div>
+        <div class="stage-main">
+          <p class="stage-age">BIRTH TO AGE 2</p>
+          <h3>Sensorimotor Stage</h3>
+          <p>Infants learn through sensory experience and physical interaction with their environment.</p>
+          <div class="tag-row">
+            <span>Object permanence</span><span>Cause and effect</span><span>Sensory exploration</span>
+          </div>
+        </div>
+        <div class="online-connection">
+          <p class="eyebrow">Online connection</p>
+          <p>Cause-and-effect games, interactive songs, animated picture books, colour-finding prompts, and virtual sensory activities.</p>
+          <p class="warning-note"><strong>Important:</strong> Digital experiences should supplement—not replace—hands-on interaction with people and objects.</p>
+        </div>
+      </article>
+
+      <div class="embed-panel reveal">
+        <div>
+          <p class="eyebrow">Optional extended timeline</p>
+          <h3>Explore the Genially timeline</h3>
+          <p>Open the original interactive resource in a new tab or display it directly below.</p>
+          <a class="button secondary" href="https://view.genially.com/6a49be27af4a9d08681a1cd6" target="_blank" rel="noopener">Open full timeline ↗</a>
+        </div>
+        <iframe
+          title="Interactive Piaget stages timeline"
+          src="https://view.genially.com/6a49be27af4a9d08681a1cd6"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="activity-card reveal">
+        <div class="activity-heading">
+          <div>
+            <p class="eyebrow">Mini experiment 02</p>
+            <h3>What stage is it?</h3>
+          </div>
+          <div class="score-pill">Score: <span id="stageScore">0</span>/4</div>
+        </div>
+        <p id="stageScenario" class="scenario-text"></p>
+        <div class="choice-grid" id="stageChoices"></div>
+        <div class="feedback" id="stageFeedback" aria-live="polite"></div>
+        <button class="text-button hidden" id="nextStageQuestion">Next scenario →</button>
+      </div>
+    </section>
+
+    <section class="section online-section" id="online">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Theory into design</p>
+        <h2>Piaget in online learning</h2>
+        <p>Online environments become constructivist when learners do more than watch, click “next,” and memorize.</p>
+      </div>
+
+      <div class="principle-grid">
+        <article class="principle-card reveal">
+          <span class="principle-number">01</span>
+          <h3>Active discovery</h3>
+          <p>Give learners opportunities to investigate, manipulate, make predictions, and test possible explanations.</p>
+          <ul>
+            <li>Interactive simulations</li>
+            <li>Virtual labs</li>
+            <li>Inquiry activities</li>
+            <li>Problem-solving games</li>
+          </ul>
+        </article>
+
+        <article class="principle-card reveal">
+          <span class="principle-number">02</span>
+          <h3>Developmentally appropriate design</h3>
+          <p>Match language, abstraction, feedback, controls, and task complexity to learners' developmental readiness.</p>
+          <ul>
+            <li>Concrete visual supports</li>
+            <li>Age-appropriate instructions</li>
+            <li>Scaffolded complexity</li>
+            <li>Meaningful interaction</li>
+          </ul>
+        </article>
+
+        <article class="principle-card reveal">
+          <span class="principle-number">03</span>
+          <h3>Productive cognitive conflict</h3>
+          <p>Use surprising outcomes and challenging problems to expose misconceptions and encourage schema revision.</p>
+          <ul>
+            <li>Unexpected simulation results</li>
+            <li>Branching scenarios</li>
+            <li>Prediction and explanation</li>
+            <li>Assumption-testing puzzles</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="simulation reveal">
+        <div class="simulation-copy">
+          <p class="eyebrow">Cognitive conflict simulator</p>
+          <h3>Will the heavier object fall faster?</h3>
+          <p>Make a prediction, then run the digital experiment.</p>
+          <div class="prediction-controls">
+            <button data-prediction="heavy">The heavy ball</button>
+            <button data-prediction="same">They land together</button>
+            <button data-prediction="light">The light ball</button>
+          </div>
+          <p id="predictionStatus" class="prediction-status">Choose your prediction first.</p>
+        </div>
+        <div class="drop-zone">
+          <div class="drop-labels"><span>Heavy</span><span>Light</span></div>
+          <div class="track"><div class="ball heavy-ball" id="heavyBall"></div></div>
+          <div class="track"><div class="ball light-ball" id="lightBall"></div></div>
+          <div class="ground"></div>
+          <button class="button primary" id="runExperiment" disabled>Run experiment</button>
+        </div>
+      </div>
+
+      <div class="activity-card reveal">
+        <div class="activity-heading">
+          <div>
+            <p class="eyebrow">Mini experiment 03</p>
+            <h3>Match the digital tool to the stage</h3>
+          </div>
+          <div class="score-pill">Matched: <span id="toolScore">0</span>/4</div>
+        </div>
+        <div class="tool-matcher" id="toolMatcher"></div>
+        <button class="button secondary" id="checkTools">Check my matches</button>
+        <div class="feedback" id="toolFeedback" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section limitations-section" id="limitations">
+      <div class="section-heading reveal">
+        <p class="eyebrow">A critical lens</p>
+        <h2>Strengths and limitations</h2>
+        <p>Useful theories become more powerful when we understand where they help—and where they oversimplify.</p>
+      </div>
+
+      <div class="balance-layout">
+        <article class="balance-card strengths reveal">
+          <div class="balance-icon">+</div>
+          <h3>What Piaget offers online learning</h3>
+          <ul>
+            <li>A strong argument for active rather than passive learning.</li>
+            <li>A focus on prior knowledge and schema development.</li>
+            <li>A reason to use exploration, prediction, feedback, and revision.</li>
+            <li>A reminder to consider developmental readiness when designing tasks.</li>
+            <li>Support for practical, verbal, abstract, and creative reasoning when activities are appropriately designed.</li>
+          </ul>
+        </article>
+
+        <article class="balance-card limits reveal">
+          <div class="balance-icon">!</div>
+          <h3>Where caution is needed</h3>
+          <ul>
+            <li>Children do not always progress through rigid, universal stage boundaries.</li>
+            <li>Performance can vary by task, context, prior experience, culture, and support.</li>
+            <li>Some abilities may appear earlier than Piaget proposed.</li>
+            <li>Individual constructivism can understate the importance of social interaction.</li>
+            <li>Digital tools cannot fully replace embodied, physical, and human experiences.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="myth-check reveal">
+        <p class="eyebrow">Pause and reconsider</p>
+        <h3>Does a stage tell us exactly what every child can do?</h3>
+        <div class="myth-buttons">
+          <button data-myth="yes">Yes—age determines ability</button>
+          <button data-myth="no">No—it is a developmental guide</button>
+        </div>
+        <div class="feedback" id="mythFeedback"></div>
+      </div>
+    </section>
+
+    <section class="section discussion-section" id="discussion">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Construct meaning together</p>
+        <h2>Conference discussion</h2>
+        <p>Choose a prompt, write a response, and bring your thinking to the course discussion space.</p>
+      </div>
+
+      <div class="prompt-grid reveal">
+        <button class="prompt-card active" data-prompt="How might online simulations or interactive tools help learners build and reorganize schemas, according to Piaget’s theory?">
+          <span>Prompt 01</span>
+          <strong>How can simulations help learners build and reorganize schemas?</strong>
+        </button>
+        <button class="prompt-card" data-prompt="If Piaget could design an online game or simulation, what do you think it would look like? What kind of thinking would it challenge?">
+          <span>Prompt 02</span>
+          <strong>What would an online game designed by Piaget look like?</strong>
+        </button>
+        <button class="prompt-card" data-prompt="Where might Piaget’s theory be most helpful—and most limited—when designing online learning for diverse learners?">
+          <span>Prompt 03</span>
+          <strong>Where is Piaget most useful and most limited online?</strong>
+        </button>
+      </div>
+
+      <div class="response-workspace reveal">
+        <label for="discussionResponse" id="selectedPrompt">
+          How might online simulations or interactive tools help learners build and reorganize schemas, according to Piaget’s theory?
+        </label>
+        <textarea id="discussionResponse" rows="7" placeholder="Write your initial response here..."></textarea>
+        <div class="workspace-actions">
+          <span id="wordCount">0 words</span>
+          <button class="button secondary" id="clearResponse">Clear</button>
+          <button class="button primary" id="copyResponse">Copy response</button>
+        </div>
+        <p class="save-note">Your draft is saved only in this browser. Copy it before posting it to Canvas, Padlet, or your group's discussion space.</p>
+      </div>
+    </section>
+
+    <section class="section references-section" id="references">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Go beyond the presentation</p>
+        <h2>References and further reading</h2>
+      </div>
+
+      <div class="reference-list reveal">
+        <article>
+          <span>01</span>
+          <p>Kalina, C., & Powell, K. C. (2009). Cognitive and social constructivism: Developing tools for an effective classroom. <em>Education, 130</em>(2), 241–250.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <p>Malik, F., & Marwaha, R. (2023). Cognitive development. In <em>StatPearls</em>. StatPearls Publishing.</p>
+          <a href="https://www.ncbi.nlm.nih.gov/books/NBK537095/" target="_blank" rel="noopener">Read source ↗</a>
+        </article>
+        <article>
+          <span>03</span>
+          <p>Ocaña, Y., Valenzuela-Fernández, L., Gálvez-Suarez, E., & Aguinaga-Villegas, D. (2022). How did children learn in an online course during lockdown? A Piagetian approximation.</p>
+          <a href="https://link.springer.com/chapter/10.1007/978-3-030-96046-9_20" target="_blank" rel="noopener">Read source ↗</a>
+        </article>
+        <article>
+          <span>04</span>
+          <p>Schrader, D. E. (2015). Constructivism and learning in the age of social media: Changing minds and learning communities. <em>New Directions for Teaching and Learning, 2015</em>(144), 23–35.</p>
+          <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/tl.20160" target="_blank" rel="noopener">Read source ↗</a>
+        </article>
+        <article>
+          <span>05</span>
+          <p>Singh, J., Steele, K., & Singh, L. (2021). Combining the best of online and face-to-face learning: Hybrid and blended learning approach for COVID-19, post vaccine, and post-pandemic world. <em>Journal of Educational Technology Systems, 50</em>(2), 140–171.</p>
+        </article>
+        <article>
+          <span>06</span>
+          <p>The OT Toolbox. Virtual sensory room.</p>
+          <a href="https://www.theottoolbox.com/virtual-sensory-room/" target="_blank" rel="noopener">Explore resource ↗</a>
+        </article>
+      </div>
+
+      <div class="reference-note reveal">
+        <strong>Before submitting:</strong> Verify each citation against the exact edition, page range, and source used by your group, then format the final list according to your instructor's preferred APA 7 requirements.
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <p class="eyebrow">One final question</p>
+      <h2>Did this website give you information—or make you reorganize what you knew?</h2>
+      <a class="button primary" href="#discussion">Join the discussion</a>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Piaget's Learning Lab</strong>
+      <p>Created for ETEC 512's Virtual Conference on Learning.</p>
+    </div>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <div class="challenge-modal" id="challengeModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="challengeTitle">
+      <button class="modal-close" id="closeChallenge" aria-label="Close challenge">×</button>
+      <p class="eyebrow">Random learning challenge</p>
+      <h2 id="challengeTitle">Predict before you click.</h2>
+      <p id="challengeText"></p>
+      <button class="button primary" id="goToChallenge">Take me there</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
